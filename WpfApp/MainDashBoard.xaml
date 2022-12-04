@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="WpfApp.MainDashBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="FlatButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="25,0,25,0">
+            <Label Content="{Binding name}" FontFamily="Montserrat" FontSize="26" FontWeight="Bold"/>
+            <Label Content="Рады возвращению!" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+            <Border Margin="0,15,0,0"  CornerRadius="15,15,15,15" Background="#FFA6CDF1" >
+                <StackPanel Height="150">
+                    <TextBlock  FontSize="18" Margin="10,0,10,10"  FontFamily="Montserrat" FontWeight="Bold" Foreground="#000"><LineBreak/>Взгляните на свой банк по новому,<LineBreak/> сейчас!</TextBlock>
+                </StackPanel>
+            </Border>
+            <StackPanel>
+                <Label Content="Платежи" Margin="0,15,0,0" FontSize="24" FontFamily="Montserrat" FontWeight="Bold"/>
+                <UniformGrid>
+                    <StackPanel>
+                 <Border Margin="0,0,7,0" Height="115"  CornerRadius="15,15,15,15" Background="#F1884D" >
+                            <StackPanel>
+                                <Label  Margin="7,5,0,0" FontSize="22" FontFamily="Montserrat" FontWeight="Medium">Рублевый</Label>
+                                <Label  Margin="7,-7,0,0" FontSize="22" FontFamily="Montserrat" FontWeight="Medium">платеж</Label>
+                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,12,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
+                            </StackPanel>
+                        </Border>
+            </StackPanel>
+            <StackPanel>
+                    <Border Margin="7,0,0,0" Height="115"  CornerRadius="15,15,15,15" Background="#FF7E99C5" >
+                            <StackPanel>
+                                <Label  Margin="7,5,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">Бюджетный</Label>
+                                <Label  Margin="7,-7,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">платеж</Label>
+                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
+                            </StackPanel>
+                        </Border>
+            </StackPanel>
+                    <StackPanel>
+                        <Border Margin="0,7,7,0" Height="115"  CornerRadius="15,15,15,15" Background="#FFA6CDF1" >
+                            <StackPanel>
+                                <Label  Margin="7,5,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">SWIFT</Label>
+                                <Label  Margin="7,-7,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">перевод</Label>
+                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel>
+                        <Border Margin="7,7,0,0" Height="115"  CornerRadius="15,15,15,15" Background="#F1884D" >
+                            <StackPanel>
+                                <Label  Margin="7,5,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">Платеж</Label>
+                                <Label  Margin="7,-7,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">пожертвование</Label>
+                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </UniformGrid>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Margin="0,45,0,0">
+            <Label Content="Реквизиты организации" FontFamily="Montserrat" FontSize="20" FontWeight="Medium"/>
+            <StackPanel>
+                <Label Content="Общие реквизиты" FontFamily="Montserrat" FontSize="15" FontWeight="Bold"/>
+                <Label x:Name="NameCompany" Content="{Binding namecoomp}" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label x:Name="INNCompany" Content="{Binding inn}"  FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label  x:Name="OGRNCompany" Content="{Binding ogrn}"  FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label x:Name="AccountBalance"  Content="None" FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Margin="0,15,0,0">
+                <Label Content="Банковские реквизиты" FontFamily="Montserrat" FontSize="15" FontWeight="Bold"/>
+                <Label x:Name="CAccount" Content="{Binding raschet}" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label x:Name="BankName" Content="Банк - Наименование" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label  x:Name="KAccount" Content="Кор.счет 435353425" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label  x:Name="BIKBank" Content="БИК Банка 34534543535" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

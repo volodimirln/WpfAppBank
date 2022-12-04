@@ -1,0 +1,60 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="700" Width="1000">
+    <Window.Background>
+        <ImageBrush>
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="Img/login-backgroung.jpg"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#000"  CornerRadius="15,15,15,15" Margin="10,10,10,10">
+            <StackPanel   Grid.Column="0"  Margin="0,20,0,0">
+                <StackPanel VerticalAlignment="Top">
+                    <Button  Margin="0,0,0,20" Height="40" Background="#0000" BorderThickness="0" Click="ClickLogo">
+                        <WrapPanel>
+                            <Image Source="Img/icon/logo.png" Width="30" />
+                        </WrapPanel>
+                    </Button>
+                    <Button Name="LodBut" Margin="0,0,0,20" Height="40" Background="#0000" BorderThickness="0" Click="OpenLogin">
+                        <WrapPanel>
+                            <Image Source="Img/icon/log-in.png" Width="30" />
+                        </WrapPanel>
+                    </Button>
+                    <Button Name="RegBut" Margin="0,0,0,20" Height="40" Background="#0000"  BorderThickness="0" Click="OpenRegistration">
+                        <WrapPanel>
+                            <Image Source="Img/icon/Registration.png" Width="30" />
+                        </WrapPanel>
+                    </Button>
+                    <Button Name="AboutBut" Margin="0,0,0,20" Height="40" Background="#0000" BorderThickness="0" Click="OpenInfo">
+                        <WrapPanel>
+                            <Image Source="Img/icon/About.png" Width="30"/>
+                        </WrapPanel>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel   VerticalAlignment="Bottom">
+                    <Button Name="SettingBut" Margin="0,0,0,20"  Height="40" Background="#0000" BorderThickness="0" Click="OpenSetting">
+                        <WrapPanel>
+                            <Image Source="Img/icon/Settings.png"  Width="30"/>
+                        </WrapPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <local:Login x:Name="LoginElem" Grid.Column="1"></local:Login>
+        <local:UserControl1 x:Name="RegElem" Grid.Column="1"></local:UserControl1>
+        <local:Setting x:Name="SettingElem" Grid.Column="1"></local:Setting>
+        <local:About x:Name="AboutElem" Grid.Column="1"></local:About>
+    </Grid>
+</Window>

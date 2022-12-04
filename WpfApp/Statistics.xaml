@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="WpfApp.Statistics"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="25,0,25,0">
+            <Label Content="Статистика" FontFamily="Montserrat" FontSize="26" FontWeight="Bold"/>
+            <Label Content="Кратко и по делу" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+            <StackPanel Margin="0,25,0,0">
+                <Label Content="Исходящие платежи" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold"/>
+                <StackPanel>
+                  
+                    <Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,1,0,1"  BorderBrush="#000">
+                        <DockPanel VerticalAlignment="Center">
+                            <WrapPanel HorizontalAlignment="Left">
+                                <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="OOO 'КанцПлюс' - Бумага"/>
+                            </WrapPanel>
+                            <WrapPanel HorizontalAlignment="Right">
+                                <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="1000,00руб."/>
+                            </WrapPanel>
+                        </DockPanel>
+                    </Border>
+                    <Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,0,0,1"  BorderBrush="#000">
+                        <DockPanel VerticalAlignment="Center">
+                            <WrapPanel HorizontalAlignment="Left">
+                                <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="OOO 'КанцПлюс' - Бумага"/>
+                            </WrapPanel>
+                            <WrapPanel HorizontalAlignment="Right">
+                                <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="1000,00руб."/>
+                            </WrapPanel>
+                        </DockPanel>
+                    </Border>
+                    <Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,0,0,1"  BorderBrush="#000">
+                        <DockPanel VerticalAlignment="Center">
+                            <WrapPanel HorizontalAlignment="Left">
+                                <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="OOO 'КанцПлюс' - Бумага"/>
+                            </WrapPanel>
+                            <WrapPanel HorizontalAlignment="Right">
+                                <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="1000,00руб."/>
+                            </WrapPanel>
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+                
+            </StackPanel>
+            <StackPanel Margin="0,35,0,0">
+                <Label Content="Входящие платежи" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold"/>
+                <StackPanel>
+
+                    <Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,1,0,1"  BorderBrush="#000">
+                        <DockPanel VerticalAlignment="Center">
+                            <WrapPanel HorizontalAlignment="Left">
+                                <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="OOO 'КанцПлюс' - Бумага"/>
+                            </WrapPanel>
+                            <WrapPanel HorizontalAlignment="Right">
+                                <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="1000,00руб."/>
+                            </WrapPanel>
+                        </DockPanel>
+                    </Border>
+                    <Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,0,0,1"  BorderBrush="#000">
+                        <DockPanel VerticalAlignment="Center">
+                            <WrapPanel HorizontalAlignment="Left">
+                                <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="OOO 'КанцПлюс' - Бумага"/>
+                            </WrapPanel>
+                            <WrapPanel HorizontalAlignment="Right">
+                                <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="1000,00руб."/>
+                            </WrapPanel>
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="25,90,25,0">
+            <Label Content="Отчеты" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold" />
+            <StackPanel Margin="0,10,0,0">
+                <Label Content="Траты за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label Content="15 943,00 руб." FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
+                <Label Content="Выручка за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label Content="18 754,00 руб." FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

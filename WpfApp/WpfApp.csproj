@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Img\icon\About.png" />
+    <None Remove="Img\icon\log-in.png" />
+    <None Remove="Img\icon\Logo.png" />
+    <None Remove="Img\icon\Registration.png" />
+    <None Remove="Img\icon\Settings.png" />
+    <None Remove="Img\login-backgroung.jpg" />
+    <None Remove="Recurces\login-backgroung.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\icon\About.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\icon\log-in.png" />
+    <Resource Include="Img\icon\Logo.png" />
+    <Resource Include="Img\icon\Registration.png" />
+    <Resource Include="Img\icon\Settings.png" />
+    <Resource Include="Img\login-backgroung.jpg" />
+  </ItemGroup>
+
+</Project>
