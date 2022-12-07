@@ -15,7 +15,7 @@
             <Label Content="Банковские карты" FontFamily="Montserrat" FontSize="26" FontWeight="Bold"/>
             <Label Content="Все Ваши карты в одной вкладке" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
         </StackPanel>
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" x:Name="SPCards">
             <Border   Height="50" Margin="25,0,25,0" VerticalAlignment="Top" Background="#0000" BorderThickness="0,1,0,1"  BorderBrush="#000">
                 <DockPanel VerticalAlignment="Center">
                     <WrapPanel HorizontalAlignment="Left">
@@ -30,7 +30,7 @@
                 </DockPanel>
             </Border>
         <Border   Height="50" Margin="25,0,25,0" VerticalAlignment="Top" Background="#0000" BorderThickness="0,0,0,1"  BorderBrush="#000">
-                <DockPanel VerticalAlignment="Center">
+                <DockPanel   VerticalAlignment="Center">
                     <WrapPanel HorizontalAlignment="Left">
                         <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="VISA***647"/>
                     </WrapPanel>

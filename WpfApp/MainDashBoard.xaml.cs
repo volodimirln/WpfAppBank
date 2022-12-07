@@ -34,5 +34,6 @@ namespace WpfApp
         public string inn { get; set; }
         public string ogrn { get; set; }
         public string raschet { get; set; }
+        public string balance { get; set; }
     }
 }

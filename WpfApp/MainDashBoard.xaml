@@ -84,14 +84,14 @@
                 <Label x:Name="NameCompany" Content="{Binding namecoomp}" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
                 <Label x:Name="INNCompany" Content="{Binding inn}"  FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
                 <Label  x:Name="OGRNCompany" Content="{Binding ogrn}"  FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
-                <Label x:Name="AccountBalance"  Content="None" FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
+                <Label x:Name="AccountBalance"  Content="{Binding balance}" FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
             </StackPanel>
             <StackPanel Margin="0,15,0,0">
                 <Label Content="Банковские реквизиты" FontFamily="Montserrat" FontSize="15" FontWeight="Bold"/>
                 <Label x:Name="CAccount" Content="{Binding raschet}" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
-                <Label x:Name="BankName" Content="Банк - Наименование" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
-                <Label  x:Name="KAccount" Content="Кор.счет 435353425" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
-                <Label  x:Name="BIKBank" Content="БИК Банка 34534543535" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label x:Name="BankName" Content="Банк - АО Банк Плантагенет" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label  x:Name="KAccount" Content="Кор.счет 30101396385728376203" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label  x:Name="BIKBank" Content="БИК Банка 045927203" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
             </StackPanel>
             
         </StackPanel>

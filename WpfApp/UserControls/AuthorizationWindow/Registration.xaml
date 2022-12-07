@@ -37,11 +37,11 @@
                     <Label Content="Наименование компании" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
                     <TextBox  Margin="0,0,0,5" x:Name="TBxCompName" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
                     <Label Content="ИНН" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" x:Name="TBxINN"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
+                    <TextBox  Margin="0,0,0,5" PreviewTextInput="NumberValidationTextBox" x:Name="TBxINN"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
                     <Label Content="ОРГН" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" x:Name="TBxOGRN" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
-                    <Label Content="Рас.счет" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" x:Name="TBxRasChet" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
+                    <TextBox  Margin="0,0,0,5" PreviewTextInput="NumberValidationTextBox" x:Name="TBxOGRN" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
+                    <Label Content="КЛП" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
+                    <TextBox  Margin="0,0,0,5" x:Name="TBxKPP" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
                     <Label Content="Пароль" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
                     <TextBox  Margin="0,0,0,5" x:Name="TBxPassword"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
                 </StackPanel>

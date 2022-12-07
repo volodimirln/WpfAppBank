@@ -31,6 +31,7 @@ namespace WpfApp
             string inn = "" ;
             string ogrn = "";
             string raschet = "";
+            string balance = "";
 
             string databaseName = "mn.db";
             
@@ -45,9 +46,10 @@ namespace WpfApp
                 namecomp = record["namecomp"].ToString();
                 inn = record["inn"].ToString();
                 ogrn = record["ogrn"].ToString();
+                balance = record["balance"].ToString();
                 raschet = record["raschet"].ToString();
             }
-
+            MainDashBoard.balance = "Баланс - " + balance + "₽";
             MainDashBoard.name = "Добро пожаловать, " + names;
             MainDashBoard.namecoomp = namecomp;
             MainDashBoard.inn = "ИНН: " + inn;

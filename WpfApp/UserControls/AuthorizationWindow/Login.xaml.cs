@@ -52,7 +52,7 @@ namespace WpfApp
             }
             else
             {
-                MessageBox.Show("Введены некорректные даные!");
+                MessageBox.Show("Введены некорректные данные!");
             }
         }
     }
