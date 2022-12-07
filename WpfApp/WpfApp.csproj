@@ -33,6 +33,7 @@
     <Resource Include="Img\login-backgroung.jpg" />
   </ItemGroup>
 
+   
   <ItemGroup>
     <Folder Include="UserControls\DashBoardWindow\Settings\" />
   </ItemGroup>
