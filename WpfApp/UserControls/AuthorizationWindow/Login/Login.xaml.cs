@@ -25,7 +25,6 @@ namespace WpfApp
         {
             InitializeComponent();
         }
-
         public void Enter(object sender, RoutedEventArgs e)
         {
             string id = "";
