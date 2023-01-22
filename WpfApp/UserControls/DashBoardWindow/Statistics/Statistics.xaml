@@ -85,6 +85,7 @@
                 <Label Content="15 943,00 руб." FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
                 <Label Content="Выручка за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
                 <Label Content="18 754,00 руб." FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
+                <Button Click="NewPdf">Создать отчет</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

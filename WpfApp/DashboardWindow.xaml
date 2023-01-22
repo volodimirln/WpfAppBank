@@ -42,7 +42,7 @@
                             <StackPanel>
                                 <Label  Margin="7,5,0,0" FontSize="22" FontFamily="Montserrat" FontWeight="Medium">Рублевый</Label>
                                 <Label  Margin="7,-7,0,0" FontSize="22" FontFamily="Montserrat" FontWeight="Medium">платеж</Label>
-                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,12,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
+                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,12,15,0" FontFamily="Montserrat" FontWeight="Bold" Click="btnRubPayments">Совершить</Button>
                             </StackPanel>
                         </Border>
             </StackPanel>
@@ -51,7 +51,7 @@
                             <StackPanel>
                                 <Label  Margin="7,5,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">Бюджетный</Label>
                                 <Label  Margin="7,-7,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">платеж</Label>
-                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
+                                <Button Style="{StaticResource FlatButtonStyle}" Click="btnBudPayments"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
                             </StackPanel>
                         </Border>
             </StackPanel>
@@ -60,7 +60,7 @@
                             <StackPanel>
                                 <Label  Margin="7,5,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">SWIFT</Label>
                                 <Label  Margin="7,-7,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">перевод</Label>
-                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
+                                <Button Style="{StaticResource FlatButtonStyle}" Click="btnSWIFTPayments"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
                             </StackPanel>
                         </Border>
                     </StackPanel>
@@ -69,7 +69,7 @@
                             <StackPanel>
                                 <Label  Margin="7,5,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">Платеж</Label>
                                 <Label  Margin="7,-7,0,0" FontSize="20" FontFamily="Montserrat" FontWeight="Medium">пожертвование</Label>
-                                <Button Style="{StaticResource FlatButtonStyle}"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
+                                <Button Style="{StaticResource FlatButtonStyle}" Click="btnDonationPayments"  Height="25" Margin="15,17,15,0" FontFamily="Montserrat" FontWeight="Bold">Совершить</Button>
                             </StackPanel>
                         </Border>
                     </StackPanel>

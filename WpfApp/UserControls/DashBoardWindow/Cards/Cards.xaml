@@ -1,9 +1,8 @@
 ﻿<UserControl x:Class="WpfApp.Cards"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -14,47 +13,11 @@
         <StackPanel Grid.Row="0" Margin="25,0,25,0" >
             <Label Content="Банковские карты" FontFamily="Montserrat" FontSize="26" FontWeight="Bold"/>
             <Label Content="Все Ваши карты в одной вкладке" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+            
         </StackPanel>
-        <StackPanel Grid.Row="1" x:Name="SPCards">
-            <Border   Height="50" Margin="25,0,25,0" VerticalAlignment="Top" Background="#0000" BorderThickness="0,1,0,1"  BorderBrush="#000">
-                <DockPanel VerticalAlignment="Center">
-                    <WrapPanel HorizontalAlignment="Left">
-                        <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="VISA***647"/>
-                    </WrapPanel>
-                    <WrapPanel HorizontalAlignment="Right">
-                        <Label FontFamily="Montserrat"  FontWeight="Medium" FontSize="14" Content="03/30"/>
-                    </WrapPanel>
-                    <WrapPanel HorizontalAlignment="Right">
-                        <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="7000,00руб."/>
-                    </WrapPanel>
-                </DockPanel>
-            </Border>
-        <Border   Height="50" Margin="25,0,25,0" VerticalAlignment="Top" Background="#0000" BorderThickness="0,0,0,1"  BorderBrush="#000">
-                <DockPanel   VerticalAlignment="Center">
-                    <WrapPanel HorizontalAlignment="Left">
-                        <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="VISA***647"/>
-                    </WrapPanel>
-                    <WrapPanel HorizontalAlignment="Right">
-                        <Label FontFamily="Montserrat"  FontWeight="Medium" FontSize="14" Content="03/30"/>
-                    </WrapPanel>
-                    <WrapPanel HorizontalAlignment="Right">
-                        <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="7000,00руб."/>
-                    </WrapPanel>
-                </DockPanel>
-            </Border>
-            <Border   Height="50" Margin="25,0,25,0" VerticalAlignment="Top" Background="#0000" BorderThickness="0,0,0,1"  BorderBrush="#000">
-                <DockPanel VerticalAlignment="Center">
-                    <WrapPanel HorizontalAlignment="Left">
-                        <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="VISA***647"/>
-                    </WrapPanel>
-                    <WrapPanel HorizontalAlignment="Right">
-                        <Label FontFamily="Montserrat"  FontWeight="Medium" FontSize="14" Content="03/30"/>
-                    </WrapPanel>
-                    <WrapPanel HorizontalAlignment="Right">
-                        <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="7000,00руб."/>
-                    </WrapPanel>
-                </DockPanel>
-            </Border>
+        <StackPanel Grid.Row="1" x:Name="SPCards" Loaded="SPCards_Loaded">
+            <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Name="CardsLBL"/>
+            <Button Click="Button_Click">Добавить карту</Button>
         </StackPanel>
     </Grid>
 </UserControl>

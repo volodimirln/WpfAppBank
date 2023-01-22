@@ -36,5 +36,24 @@ namespace WpfApp
         public string raschet { get; set; }
         public string balance { get; set; }
 
+        private void btnRubPayments(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSWIFTPayments(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("В Вашем регионе SWIFT-переводы недоступны");
+        }
+
+        private void btnBudPayments(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDonationPayments(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -43,16 +43,30 @@ namespace WpfApp
                 login = record["login"].ToString();
                 password = record["password"].ToString();
             }
-           if(password == TBxPassword.Text)
+           if(password == TBxPassword.Text || password == psb.Password)
             {
                 DashBoard dsh = new DashBoard( id,  login,  password);
+
                 MessageBox.Show("Авторизация прошла успешно!");
                 dsh.ShowDialog();
+                new Cards();
             }
             else
             {
                 MessageBox.Show("Введены некорректные данные!");
             }
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            psb.Visibility= Visibility.Hidden;
+            TBxPassword.Text = psb.Password;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            psb.Visibility = Visibility.Visible;
+            psb.Password = TBxPassword.Text;
         }
     }
 }

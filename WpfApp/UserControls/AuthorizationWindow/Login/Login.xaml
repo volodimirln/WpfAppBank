@@ -14,13 +14,30 @@
                 </Style>
             </Style.Resources>
         </Style>
-        <Style TargetType="Button">
+        <Style TargetType="PasswordBox">
             <Style.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="12" />
                 </Style>
             </Style.Resources>
         </Style>
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="12" />
+                </Style>
+            </Style.Resources>
+            
+        </Style>
+        
+        <ControlTemplate x:Key="passwordbox" TargetType="{x:Type PasswordBox}">
+            <Border Background="{TemplateBinding Background}" 
+        x:Name="Bd" BorderBrush="#FFE6DDDD"
+        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                <ScrollViewer Name="PART_ContentHost"  SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Border>
+        </ControlTemplate>
+        
     </UserControl.Resources>
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="370">
@@ -30,8 +47,14 @@
                 <Label Content="Имя пользователя" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
                 <TextBox x:Name="TBxLogin" Margin="0,0,0,5" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
                 <Label Content="Пароль" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                <TextBox x:Name="TBxPassword" Margin="0,0,0,5"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38" ></TextBox>
+                
+                <Grid>
+                    <TextBox x:Name="TBxPassword" Margin="0,0,0,5"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38" ></TextBox>
+                    <PasswordBox Template="{StaticResource passwordbox}"  Padding="10,10,0,0" Height="38" Margin="0,0,0,4" x:Name="psb"/>
+                </Grid>
+                
             </StackPanel>
+            <CheckBox FontSize="16"  FontFamily="Montserrat" FontWeight="Medium" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Показать пароль</CheckBox>
             <Button  Margin="0,5,0,5" Height="38" FontFamily="Montserrat" FontWeight="Bold" FontSize="14" Click="Enter">Войти</Button>
         </StackPanel>
     </Grid>

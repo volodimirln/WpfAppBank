@@ -20,6 +20,7 @@ namespace WpfApp
 {
     public partial class DashBoard : Window
     {
+        string useid;
         
         public DashBoard(string id, string login, string password)
         {
@@ -49,6 +50,7 @@ namespace WpfApp
                 balance = record["balance"].ToString();
                 raschet = record["raschet"].ToString();
             }
+            Cards.id = id;
             MainDashBoard.balance = "Баланс - " + balance + "₽";
             MainDashBoard.name = "Добро пожаловать, " + names;
             MainDashBoard.namecoomp = namecomp;
@@ -60,6 +62,9 @@ namespace WpfApp
             Cards.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             Premium.Visibility = Visibility.Hidden;
+
+           
+
         }
         
         private void openMain(object sender, ContextMenuEventArgs e)
@@ -76,6 +81,7 @@ namespace WpfApp
             Cards.Visibility = Visibility.Visible;
             Statistics.Visibility = Visibility.Hidden;
             Premium.Visibility = Visibility.Hidden;
+            
         }
 
         private void openStatistics(object sender, RoutedEventArgs e)
