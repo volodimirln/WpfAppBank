@@ -6,6 +6,21 @@
              xmlns:local="clr-namespace:WpfApp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
@@ -85,7 +100,7 @@
                 <Label Content="15 943,00 руб." FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
                 <Label Content="Выручка за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
                 <Label Content="18 754,00 руб." FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
-                <Button Click="NewPdf">Создать отчет</Button>
+                <Button Click="NewPdf"  Height="20" FontSize="12" FontFamily="Montserrat" Margin="0,20,10,10">Создать отчет</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

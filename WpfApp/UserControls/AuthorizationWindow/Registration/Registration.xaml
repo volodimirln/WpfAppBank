@@ -21,6 +21,13 @@
                 </Style>
             </Style.Resources>
         </Style>
+        <ControlTemplate x:Key="passwordbox" TargetType="{x:Type PasswordBox}">
+            <Border Background="{TemplateBinding Background}" 
+        x:Name="Bd" BorderBrush="#FFE6DDDD"
+        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                <ScrollViewer Name="PART_ContentHost"  SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Border>
+        </ControlTemplate>
     </UserControl.Resources>
     <Grid>
         <ScrollViewer>
@@ -43,7 +50,12 @@
                     <Label Content="КЛП" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
                     <TextBox  Margin="0,0,0,5" x:Name="TBxKPP" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
                     <Label Content="Пароль" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" x:Name="TBxPassword"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
+                    <!--<TextBox  Margin="0,0,0,5" x:Name="TBxPassword"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>-->
+                    <Grid>
+                        <TextBox x:Name="TBxPassword" Margin="0,0,0,5"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38" ></TextBox>
+                        <PasswordBox Template="{StaticResource passwordbox}"  Padding="10,10,0,0" Height="38" Margin="0,0,0,4" x:Name="psb"/>
+                    </Grid>
+                    <CheckBox FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"  Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Показать пароль</CheckBox>
                 </StackPanel>
 
                 <Button  Margin="0,5,0,5" Height="38" FontFamily="Montserrat" FontWeight="Bold" FontSize="14" Click="Regisr_Click">Зарегистрироваться</Button>

@@ -6,7 +6,40 @@
              xmlns:local="clr-namespace:WpfApp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Grid">
+            <Style.Setters>
+                <Setter Property="Margin" Value="50,50,50,50" />
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Label FontSize="32" FontFamily="Montserrat" FontWeight="Black">Настройки</Label>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label FontSize="24" FontFamily="Montserrat" FontWeight="Bold">Отключить фон</Label>
+            <TextBlock  FontSize="18" FontFamily="Montserrat" FontWeight="Medium">Включить белый фон, для более удобной работы.</TextBlock>
+            <Button Width="150" Height="20" HorizontalAlignment="Left" FontSize="12" FontFamily="Montserrat" Margin="0,20,10,10" Click="Button_Click">Отключить</Button>
+        </StackPanel>
     </Grid>
 </UserControl>

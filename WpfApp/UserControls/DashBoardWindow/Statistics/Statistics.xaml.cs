@@ -61,7 +61,7 @@ namespace WpfApp
             iTextSharp.text.Font m3font = new iTextSharp.text.Font(mainfont, 22f, iTextSharp.text.Font.NORMAL);
             iTextSharp.text.Font m4font = new iTextSharp.text.Font(baseFont, 16f, iTextSharp.text.Font.NORMAL);
             iTextSharp.text.Font m5font = new iTextSharp.text.Font(mainfont, 16f, iTextSharp.text.Font.NORMAL);
-            using (FileStream stream = new FileStream(@"Test.pdf", FileMode.Create))
+            using (FileStream stream = new FileStream(@"Report.pdf", FileMode.Create))
             {
                 PdfWriter.GetInstance(document, stream);
                 document.Open();
@@ -108,22 +108,28 @@ namespace WpfApp
 
                 document.Close();
 
+
             }
         }
 
         private void NewPdf(object sender, RoutedEventArgs e)
         {
+            
             createPDF();
-            SendToPrinter();
+            OpenFile();
+            // SendToPrinter();
         }
         private void SendToPrinter()
         {
 
             Spire.Pdf.PdfDocument doc1 = new Spire.Pdf.PdfDocument();
-            doc1.LoadFromFile("Test.pdf");
+            doc1.LoadFromFile("Report.pdf");
             doc1.Print();
-
-
         }
+        private void OpenFile()
+        {
+            Process.Start(new ProcessStartInfo("Report.pdf") { UseShellExecute = true });
+        }
+    
     }
 }
