@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data.SQLite;
 using System.IO;
 using System.Text.RegularExpressions;
+using WpfApp.Data;
 
 namespace WpfApp
 {
@@ -41,37 +42,9 @@ namespace WpfApp
             if (!String.IsNullOrEmpty(TBxLogin.Text) && !String.IsNullOrEmpty(TBxName.Text) && !String.IsNullOrEmpty(TBxCompName.Text)
                 && !String.IsNullOrEmpty(TBxINN.Text) && !String.IsNullOrEmpty(TBxOGRN.Text) && !String.IsNullOrEmpty(TBxKPP.Text))
             {
-                Random rsch = new Random();
-                int rschfirsnbr = rsch.Next(1, 9);
-                int rschordinalnbr = rsch.Next(1000000, 9999999);
-
-                rschfirsnbr.ToString();
-                rschordinalnbr.ToString();
-
-                string login = TBxLogin.Text;
-                string name = TBxName.Text;
-                string compname = TBxCompName.Text;
-                string inn = TBxINN.Text;
-                string ogrn = TBxOGRN.Text;
-                string rsc = "40701810" + rschfirsnbr + "00001" + rschordinalnbr;
-                string kpp = TBxKPP.Text;
-                string pswd = TBxPassword.Text;
-
-                string databaseName = "mn.db";
-                SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", databaseName));
-                connection.Open();
-                SQLiteCommand command = new SQLiteCommand("INSERT INTO 'users' ('login', 'name', 'namecomp', 'inn', 'ogrn', 'raschet', 'password', 'kpp', 'balance') VALUES ('" + login + "', '" + name + "', '" + compname + "', '" + inn + "', '" + ogrn + "', '" + rsc + "', '" + pswd + "', '" + kpp + "', 5000);", connection);
-                command.ExecuteNonQuery();
-                connection.Close();
-                MessageBox.Show("Вы успешно прошли регистрацию!");
-
-                TBxLogin.Text = "";
-                TBxName.Text = "";
-                TBxCompName.Text = "";
-                TBxINN.Text = "";
-                TBxOGRN.Text = "";
-                TBxKPP.Text = "";
-                TBxPassword.Text = "";
+                WorkDB dB = new WorkDB();
+                dB.setRegistrtion(TBxLogin, TBxName, TBxCompName, TBxINN, TBxOGRN, TBxKPP, TBxPassword, psb);
+                MessageBox.Show("Регистрация прошла успешно");
             }
             else
             {

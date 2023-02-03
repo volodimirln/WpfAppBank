@@ -15,6 +15,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Data.Common;
 using System.Xml.Linq;
+using WpfApp.Data;
 
 namespace WpfApp
 {
@@ -26,37 +27,9 @@ namespace WpfApp
         {
 
             InitializeComponent();
-           
-            string names = "";
-            string namecomp = "";
-            string inn = "" ;
-            string ogrn = "";
-            string raschet = "";
-            string balance = "";
 
-            string databaseName = "mn.db";
-            
-            SQLiteConnection connection =
-            new SQLiteConnection(string.Format("Data Source={0};", databaseName));
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand("SELECT * FROM 'users' WHERE login = '" + login + "' AND password = '" + password + "' AND id = '" + id + "';", connection);
-            SQLiteDataReader reader = command.ExecuteReader();
-            foreach (DbDataRecord record in reader)
-            {
-                names = record["name"].ToString();
-                namecomp = record["namecomp"].ToString();
-                inn = record["inn"].ToString();
-                ogrn = record["ogrn"].ToString();
-                balance = record["balance"].ToString();
-                raschet = record["raschet"].ToString();
-            }
-            Cards.id = id;
-            MainDashBoard.balance = "Баланс - " + balance + "₽";
-            MainDashBoard.name = "Добро пожаловать, " + names;
-            MainDashBoard.namecoomp = namecomp;
-            MainDashBoard.inn = "ИНН: " + inn;
-            MainDashBoard.ogrn = "ОГРН: " + ogrn;
-            MainDashBoard.raschet = "Рас. счет. " + raschet;
+            WorkDB dB = new WorkDB();
+            dB.getDateForDashboard(id, login, password, MainDashBoard, Cards);
 
             MainDashBoard.Visibility = Visibility.Visible;
             Cards.Visibility = Visibility.Hidden;

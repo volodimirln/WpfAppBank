@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp.Data;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace WpfApp
@@ -29,34 +30,21 @@ namespace WpfApp
            
             InitializeComponent();
             this.DataContext = this;
-            
         }
        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Random rnd = new Random();
-            int lastNumber = rnd.Next(0, 10);
-            int cvc = rnd.Next(99, 1000);
-            int pincode = rnd.Next(999, 10000);
-            int month = rnd.Next(0, 13);
-
-            string number = "2098 700 0001 234" + lastNumber.ToString();
-            string databaseName = "mn.db";
-            SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", databaseName));
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand("INSERT INTO 'cards' ('clientid', 'number', 'systempay', 'date', 'cvc', 'pincode', 'datareg') VALUES ('" + id + "', '" + number + "', 'MIR', '"+ month.ToString() + "/30', '"+ cvc.ToString() + "', '"+ pincode.ToString() + "', '"+ DateTime.Now.ToString() + "' );", connection);
-            command.ExecuteNonQuery();
-            connection.Close();
-            MessageBox.Show("Карта добавлена! При следуещем запуске приложения карта отобраится.");
-
+            WorkDB dB = new WorkDB();
+            dB.addNewCard(id, CardsLBL);
         }
-        private void showCards() {  
+        /*private void showCards() {  
            string texts = "";
             string databaseName = "mn.db";
             SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", databaseName));
             connection.Open();
             SQLiteCommand command = new SQLiteCommand("SELECT * FROM 'cards' WHERE clientid = '" + id + "';", connection);
             SQLiteDataReader reader = command.ExecuteReader();
+
             texts = new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
             foreach (DbDataRecord record in reader)
             {
@@ -64,11 +52,13 @@ namespace WpfApp
                 texts += new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
             }
             CardsLBL.Content = texts;
-        }
+        }*/
 
         private void SPCards_Loaded(object sender, RoutedEventArgs e)
         {
-            showCards();
+            WorkDB dB = new WorkDB();
+
+            dB.showCards(id, CardsLBL);
         }
     }
 }

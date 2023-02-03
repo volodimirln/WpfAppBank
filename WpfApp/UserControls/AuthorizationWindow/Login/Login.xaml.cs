@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data.SQLite;
 using System.IO;
 using System.Data.Common;
+using WpfApp.Data;
 
 namespace WpfApp
 {
@@ -27,39 +28,13 @@ namespace WpfApp
         }
         public void Enter(object sender, RoutedEventArgs e)
         {
-            string id = "";
-            string login = "";
-            string password = "";
-
-            string databaseName = "mn.db";
-            SQLiteConnection connection =
-            new SQLiteConnection(string.Format("Data Source={0};", databaseName));
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand("SELECT * FROM 'users' WHERE login = '"+ TBxLogin.Text + "';", connection);
-            SQLiteDataReader reader = command.ExecuteReader();
-            foreach (DbDataRecord record in reader)
-            {
-                id = record["id"].ToString();
-                login = record["login"].ToString();
-                password = record["password"].ToString();
-            }
-           if(password == TBxPassword.Text || password == psb.Password)
-            {
-                DashBoard dsh = new DashBoard( id,  login,  password);
-
-                MessageBox.Show("Авторизация прошла успешно!");
-                dsh.ShowDialog();
-                new Cards();
-            }
-            else
-            {
-                MessageBox.Show("Введены некорректные данные!");
-            }
+            WorkDB logindb = new WorkDB();
+            logindb.setAuthtorization(TBxPassword, psb, TBxLogin);
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            psb.Visibility= Visibility.Hidden;
+            psb.Visibility = Visibility.Hidden;
             TBxPassword.Text = psb.Password;
         }
 
