@@ -7,42 +7,30 @@
         mc:Ignorable="d"
         Title="Панель управления" Height="700" Width="1000">
     <Window.Resources>
-        <Style TargetType="Button" x:Key="FlatButtonStyle">
-            <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border BorderThickness="0"
-                        Background="{TemplateBinding Background}"
-                        CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        </Style>
+        <ResourceDictionary Source="/Style/MainStyle.xaml" />
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
-
         <Border  Background="#0000" BorderThickness="0,0,1,0"  BorderBrush="#FFB1B1B1">
             <StackPanel Grid.Column="0" ContextMenuClosing="openMain">
                 <Label Content="Plantagenet" HorizontalAlignment="Center" Margin="0,17,0,0" FontSize="24" FontFamily="Montserrat" FontWeight="Bold"/>
                 <StackPanel Margin="30,70,0,0">
-                    <Button HorizontalContentAlignment="Left" BorderThickness="0" Height="30" Margin="0,0,0,17"  FontFamily="Montserrat" FontWeight="Medium" Background="#0000" FontSize="16" Click="openMain">Главная</Button>
-                    <Button HorizontalContentAlignment="Left" BorderThickness="0" Height="30" Margin="0,0,0,17" FontFamily="Montserrat" FontWeight="Medium"  Background="#0000" FontSize="16" Click="openCards">Карты</Button>
-                    <Button HorizontalContentAlignment="Left" BorderThickness="0"  Height="30" Margin="0,0,0,17" FontFamily="Montserrat" FontWeight="Medium"  Background="#0000" FontSize="16" Click="openStatistics">Статиcтика</Button>
-                    <Button HorizontalContentAlignment="Left" BorderThickness="0" Height="30" Margin="0,0,0,17" FontFamily="Montserrat" FontWeight="Medium"  Background="#0000" FontSize="16" Click="openPrimium">Премиум</Button>
-                    <Button HorizontalContentAlignment="Left" BorderThickness="0" Height="30" Margin="0,0,0,17"  FontFamily="Montserrat" FontWeight="Medium" Background="#0000" FontSize="16">Настройки</Button>
+                    <Button Style="{StaticResource ButDachBoardWindow}" Click="openMain">Главная</Button>
+                    <Button Style="{StaticResource ButDachBoardWindow}" Click="openCards">Карты</Button>
+                    <Button Style="{StaticResource ButDachBoardWindow}" Click="openStatistics">Статиcтика</Button>
+                    <Button Style="{StaticResource ButDachBoardWindow}" Click="openPrimium">Премиум</Button>
+                    <Button Style="{StaticResource ButDachBoardWindow}">Настройки</Button>
                 </StackPanel>
-                <Border Background="#000"  CornerRadius="15,15,15,15" Margin="10,10,10,10">
+                
+                <Border  CornerRadius="15,15,15,15" Background="#000" Margin="10,10,10,10">
                     <StackPanel Height="190">
-                        <TextBlock  FontSize="15" Margin="0,10,0,0" HorizontalAlignment="Center" FontFamily="Montserrat" FontWeight="Medium" Foreground="#fff">Используйте наш<LineBreak/> премиум прямо<LineBreak/> сейчас!</TextBlock>
+                        <TextBlock Style="{StaticResource TextBlockDachBoardWindow}"  >Используйте наш<LineBreak/> премиум прямо<LineBreak/> сейчас!</TextBlock>
                     </StackPanel>
                 </Border>
-                <Button Style="{StaticResource FlatButtonStyle}" Width="150" Height="45" Margin="0,-30,0,0" FontFamily="Montserrat" FontWeight="Bold">Давайте начнем</Button>
+                <Button Style="{StaticResource PrBtDachBoardWindow}" >Давайте начнем</Button>
             </StackPanel>
         </Border>
         <local:MainDashBoard x:Name="MainDashBoard" name="Нет данных" namecoomp="Нет данных" inn="Нет данных" ogrn="Нет данных" raschet="Нет данных"  Grid.Column="1"></local:MainDashBoard>

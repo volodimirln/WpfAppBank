@@ -33,6 +33,8 @@
         <StackPanel Grid.Row="1" x:Name="SPCards" Loaded="SPCards_Loaded">
             <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Name="CardsLBL"/>
             <Button Click="Button_Click">Добавить карту</Button>
+            <TextBox x:Name="TBDelCardId"/>
+            <Button x:Name="BTNDelCardId" Click="BTNDelCardId_Click">Удалить карту</Button>
         </StackPanel>
     </Grid>
 </UserControl>

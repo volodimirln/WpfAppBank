@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="App.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Img\icon\About.png" />
     <None Remove="Img\icon\log-in.png" />
     <None Remove="Img\icon\Logo.png" />
@@ -15,6 +19,10 @@
     <None Remove="Img\icon\Settings.png" />
     <None Remove="Img\login-backgroung.jpg" />
     <None Remove="Recurces\login-backgroung.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="App.xaml" />
   </ItemGroup>
 
   <ItemGroup>

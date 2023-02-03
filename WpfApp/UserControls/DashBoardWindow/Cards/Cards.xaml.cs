@@ -37,23 +37,12 @@ namespace WpfApp
             WorkDB dB = new WorkDB();
             dB.addNewCard(id, CardsLBL);
         }
-        /*private void showCards() {  
-           string texts = "";
-            string databaseName = "mn.db";
-            SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", databaseName));
-            connection.Open();
-            SQLiteCommand command = new SQLiteCommand("SELECT * FROM 'cards' WHERE clientid = '" + id + "';", connection);
-            SQLiteDataReader reader = command.ExecuteReader();
-
-            texts = new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
-            foreach (DbDataRecord record in reader)
-            {
-                texts += record["number"].ToString() + " " +record["systempay"].ToString() + "          Срок - " + record["date"].ToString() + "          CVC - " + record["cvc"].ToString() + "          Пин-код - " + record["pincode"].ToString() + "          " + record["datareg"].ToString() + "\r\n";
-                texts += new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
-            }
-            CardsLBL.Content = texts;
-        }*/
-
+        private void BTNDelCardId_Click(object sender, RoutedEventArgs e)
+        {
+            WorkDB dB = new WorkDB();
+            dB.delCardByID(TBDelCardId.Text, CardsLBL, id);
+            //MessageBox.Show(TBDelCardId.Text);
+        }
         private void SPCards_Loaded(object sender, RoutedEventArgs e)
         {
             WorkDB dB = new WorkDB();

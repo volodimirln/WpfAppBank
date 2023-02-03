@@ -65,10 +65,11 @@ namespace WpfApp.Data
         }
         private void setDataCards()
         {
+            
             texts = new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
             foreach (DbDataRecord record in reader)
             {
-                texts += record["number"].ToString() + " " + record["systempay"].ToString() + "          Срок - " + record["date"].ToString() + "          CVC - " + record["cvc"].ToString() + "          Пин-код - " + record["pincode"].ToString() + "          " + record["datareg"].ToString() + "\r\n";
+                texts += record["id"].ToString() + ". " + record["number"].ToString() + " " + record["systempay"].ToString() + "          Срок - " + record["date"].ToString() + "          CVC - " + record["cvc"].ToString() + "          Пин-код - " + record["pincode"].ToString() + "          " + record["datareg"].ToString() + "\r\n";
                 texts += new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
             }
 
@@ -154,6 +155,14 @@ namespace WpfApp.Data
             rschordinalnbr.ToString();
             rscs = "40701810" + rschfirsnbr + "00001" + rschordinalnbr;
         }
-       
+       public void delCardByID(string idCard, Label lbl, string iduser)
+        {
+            string SQLRequest = "DELETE FROM 'cards' WHERE id = " + idCard + " AND clientid = '" + iduser + "';";
+            //string SQLRequest = "DELETE * FROM 'cards' WHERE id = ;";
+            setConnectionDB(SQLRequest);
+            showCards(iduser, lbl);
+            MessageBox.Show("Вы удалили карту");
+
+        }
     }
 }

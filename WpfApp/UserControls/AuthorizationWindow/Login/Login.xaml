@@ -7,55 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="TextBox">
-            <Style.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="12" />
-                </Style>
-            </Style.Resources>
-        </Style>
-        <Style TargetType="PasswordBox">
-            <Style.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="12" />
-                </Style>
-            </Style.Resources>
-        </Style>
-        <Style TargetType="Button">
-            <Style.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="12" />
-                </Style>
-            </Style.Resources>
-            
-        </Style>
-        
-        <ControlTemplate x:Key="passwordbox" TargetType="{x:Type PasswordBox}">
-            <Border Background="{TemplateBinding Background}" 
-        x:Name="Bd" BorderBrush="#FFE6DDDD"
-        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
-                <ScrollViewer Name="PART_ContentHost"  SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
-            </Border>
-        </ControlTemplate>
-        
+        <ResourceDictionary Source="/Style/MainStyle.xaml" />
     </UserControl.Resources>
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="370">
-            <Label Content="Добро пожаловать!" HorizontalAlignment="Center" FontSize="32" FontFamily="Montserrat" FontWeight="Black"/>
-            <Label Content="Войдите в профиль"  HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" />
+            <Label Content="Добро пожаловать!" Style="{StaticResource MainTitleLoginStyle}" />
+            <Label Content="Войдите в профиль" Style="{StaticResource SubTitleLoginStyle}" />
+            
             <StackPanel Margin="0,25,0,0">
-                <Label Content="Имя пользователя" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                <TextBox x:Name="TBxLogin" Margin="0,0,0,5" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
-                <Label Content="Пароль" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                
+                <Label  Content="Имя пользователя" Style="{StaticResource TitleLoginStyle}" />
+                <TextBox Style="{StaticResource TBLoginStyle}"  x:Name="TBxLogin" ></TextBox>
+                <Label Content="Пароль" Style="{StaticResource TitleLoginStyle}" />
+
                 <Grid>
-                    <TextBox x:Name="TBxPassword" Margin="0,0,0,5"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38" ></TextBox>
-                    <PasswordBox Template="{StaticResource passwordbox}"  Padding="10,10,0,0" Height="38" Margin="0,0,0,4" x:Name="psb"/>
+                    <TextBox Style="{StaticResource TBLoginStyle}" x:Name="TBxPassword" ></TextBox>
+                    <PasswordBox Style="{StaticResource PBLoginStyle}"  Template="{StaticResource passwordbox}"  x:Name="psb"/>
                 </Grid>
-                
             </StackPanel>
-            <CheckBox FontSize="16"  FontFamily="Montserrat" FontWeight="Medium" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Показать пароль</CheckBox>
-            <Button  Margin="0,5,0,5" Height="38" FontFamily="Montserrat" FontWeight="Bold" FontSize="14" Click="Enter">Войти</Button>
+            <CheckBox Style="{StaticResource CBLoginStyle}"  Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Показать пароль</CheckBox>
+            <Button Style="{StaticResource BTLoginStyle}"  Click="Enter">Войти</Button>
         </StackPanel>
     </Grid>
 </UserControl>

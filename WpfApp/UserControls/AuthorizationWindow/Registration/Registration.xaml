@@ -7,58 +7,37 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="TextBox">
-            <Style.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="12" />
-                </Style>
-            </Style.Resources>
-        </Style>
-        <Style TargetType="Button">
-            <Style.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="12" />
-                </Style>
-            </Style.Resources>
-        </Style>
-        <ControlTemplate x:Key="passwordbox" TargetType="{x:Type PasswordBox}">
-            <Border Background="{TemplateBinding Background}" 
-        x:Name="Bd" BorderBrush="#FFE6DDDD"
-        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
-                <ScrollViewer Name="PART_ContentHost"  SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
-            </Border>
-        </ControlTemplate>
+        <ResourceDictionary Source="/Style/MainStyle.xaml" />
     </UserControl.Resources>
     <Grid>
         <ScrollViewer>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,35,0,55"  Width="370">
-                <Label Content="Давайте начнем!" HorizontalAlignment="Center" FontSize="32" FontFamily="Montserrat" FontWeight="Black"/>
+                <Label Content="Давайте начнем!"  Style="{StaticResource MainTitleLoginStyle}"/>
 
-                <Label Content="Регистрация"  HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" />
+                <Label Content="Регистрация"  Style="{StaticResource SubTitleLoginStyle}" />
 
                 <StackPanel Margin="0,25,0,0">
-                    <Label Content="Логин" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox Margin="0,0,0,5" x:Name="TBxLogin" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
-                    <Label Content="Имя пользователя" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" x:Name="TBxName"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
-                    <Label Content="Наименование компании" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" x:Name="TBxCompName" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
-                    <Label Content="ИНН" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" PreviewTextInput="NumberValidationTextBox" x:Name="TBxINN"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
-                    <Label Content="ОРГН" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" PreviewTextInput="NumberValidationTextBox" x:Name="TBxOGRN" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
-                    <Label Content="КЛП" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <TextBox  Margin="0,0,0,5" x:Name="TBxKPP" VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>
-                    <Label Content="Пароль" FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"/>
-                    <!--<TextBox  Margin="0,0,0,5" x:Name="TBxPassword"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38"></TextBox>-->
+                    <Label Content="Логин" Style="{StaticResource TitleLoginStyle}"/>
+                    <TextBox x:Name="TBxLogin" Style="{StaticResource TBLoginStyle}"></TextBox>
+                    <Label Content="Имя пользователя" Style="{StaticResource TitleLoginStyle}"/>
+                    <TextBox   x:Name="TBxName"  Style="{StaticResource TBLoginStyle}"></TextBox>
+                    <Label Content="Наименование компании" Style="{StaticResource TitleLoginStyle}"/>
+                    <TextBox  x:Name="TBxCompName" Style="{StaticResource TBLoginStyle}"></TextBox>
+                    <Label Content="ИНН" Style="{StaticResource TitleLoginStyle}"/>
+                    <TextBox PreviewTextInput="NumberValidationTextBox" x:Name="TBxINN"  Style="{StaticResource TBLoginStyle}"></TextBox>
+                    <Label Content="ОРГН" Style="{StaticResource TitleLoginStyle}"/>
+                    <TextBox  PreviewTextInput="NumberValidationTextBox" x:Name="TBxOGRN" Style="{StaticResource TBLoginStyle}"></TextBox>
+                    <Label Content="КПП" Style="{StaticResource TitleLoginStyle}"/>
+                    <TextBox   x:Name="TBxKPP" Style="{StaticResource TBLoginStyle}"></TextBox>
+                    <Label Content="Пароль" Style="{StaticResource TitleLoginStyle}"/>
                     <Grid>
-                        <TextBox x:Name="TBxPassword" Margin="0,0,0,5"  VerticalContentAlignment="Center" Padding="10,0,0,0" Height="38" ></TextBox>
-                        <PasswordBox Template="{StaticResource passwordbox}"  Padding="10,10,0,0" Height="38" Margin="0,0,0,4" x:Name="psb"/>
+                        <TextBox x:Name="TBxPassword" Style="{StaticResource TBLoginStyle}"></TextBox>
+                        <PasswordBox Template="{StaticResource passwordbox}"  Style="{StaticResource PBLoginStyle}"  x:Name="psb"/>
                     </Grid>
-                    <CheckBox FontSize="16"  FontFamily="Montserrat" FontWeight="Medium"  Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Показать пароль</CheckBox>
+                    <CheckBox Style="{StaticResource CBLoginStyle}"   Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Показать пароль</CheckBox>
                 </StackPanel>
 
-                <Button  Margin="0,5,0,5" Height="38" FontFamily="Montserrat" FontWeight="Bold" FontSize="14" Click="Regisr_Click">Зарегистрироваться</Button>
+                <Button  Style="{StaticResource BTLoginStyle}" Click="Regisr_Click">Зарегистрироваться</Button>
 
             </StackPanel>
         </ScrollViewer>
