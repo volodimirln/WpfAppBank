@@ -106,7 +106,7 @@ namespace WpfApp
                 if (record["type"].ToString() == "1")
                 {
 
-                    texts += "Пополнение счет" + "           " + record["payType"].ToString() + "           " + record["sum"].ToString() + "           " + record["date"].ToString() + "          " + record["cardnum"].ToString() + "\r\n";
+                    texts += "Пополнение счета" + "           " + record["payType"].ToString() + "           " + record["sum"].ToString() + "           " + record["date"].ToString() + "          " + record["cardnum"].ToString() + "\r\n";
                     texts += new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
 
 
