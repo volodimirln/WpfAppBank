@@ -29,7 +29,7 @@ namespace WpfApp
             InitializeComponent();
 
             WorkDB dB = new WorkDB();
-            dB.getDateForDashboard(id, login, password, MainDashBoard, Cards);
+            dB.getDateForDashboard(id, login, password, MainDashBoard, Cards, Statistics);
 
             MainDashBoard.Visibility = Visibility.Visible;
             Cards.Visibility = Visibility.Hidden;

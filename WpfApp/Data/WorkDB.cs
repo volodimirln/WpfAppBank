@@ -25,6 +25,7 @@ namespace WpfApp.Data
         private string ogrn;
         private string raschet;
         private string balance;
+        public string[] arcard;
         string texts;
         private SQLiteDataReader? reader;
 
@@ -69,10 +70,20 @@ namespace WpfApp.Data
             texts = new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
             foreach (DbDataRecord record in reader)
             {
-                texts += record["id"].ToString() + ". " + record["number"].ToString() + " " + record["systempay"].ToString() + "          Срок - " + record["date"].ToString() + "          CVC - " + record["cvc"].ToString() + "          Пин-код - " + record["pincode"].ToString() + "          " + record["datareg"].ToString() + "\r\n";
+                texts += record["number"].ToString() + " " + record["systempay"].ToString() + "          Срок - " + record["date"].ToString() + "          CVC - " + record["cvc"].ToString() + "          Пин-код - " + record["pincode"].ToString() + "          " + record["datareg"].ToString() + "\r\n";
                 texts += new string('\u2500', 5) + new string('\u2500', 140) + "\r\n";
             }
 
+        }
+        private void setDataArrayCards()
+        {
+            string[] arcard = new string[] { };
+            int i = 0;
+            foreach (DbDataRecord record in reader)
+            {
+                i++;
+                arcard[i] = record["number"].ToString();
+            }
         }
 
 
@@ -94,7 +105,7 @@ namespace WpfApp.Data
 
             login.Text = ""; name.Text = ""; compname.Text = ""; inn.Text = ""; ogrn.Text = ""; kpp.Text = ""; pswd.Text = ""; pswds.Password = "";
         }
-        public void getDateForDashboard(string id, string login, string password, MainDashBoard mainDashBoard, Cards cards)
+        public void getDateForDashboard(string id, string login, string password, MainDashBoard mainDashBoard, Cards cards, Statistics statistics)
         {
             string SQLRequest = "SELECT * FROM 'users' WHERE login = '" + login + "' AND password = '" + password + "' AND id = '" + id + "';";
             setConnectionDB(SQLRequest);
@@ -107,6 +118,8 @@ namespace WpfApp.Data
             mainDashBoard.inn = "ИНН: " + inn;
             mainDashBoard.ogrn = "ОГРН: " + ogrn;
             mainDashBoard.raschet = "Рас. счет. " + raschet;
+            mainDashBoard.id = id;
+            statistics.id = id;
         }
         public void addNewCard(string id, Label lbl)
         {
@@ -130,6 +143,8 @@ namespace WpfApp.Data
             lbl.Content = texts;
         }
 
+        
+
 
         //Прочее
         private void openDashboard(string TBPass, string PBPass)
@@ -139,6 +154,7 @@ namespace WpfApp.Data
                 DashBoard dsh = new DashBoard(id, login, password);
                 MessageBox.Show("Авторизация прошла успешно!");
                 dsh.ShowDialog();
+
             }
             else
             {
@@ -155,9 +171,9 @@ namespace WpfApp.Data
             rschordinalnbr.ToString();
             rscs = "40701810" + rschfirsnbr + "00001" + rschordinalnbr;
         }
-       public void delCardByID(string idCard, Label lbl, string iduser)
+       public void delCardByID(string idCard, Label lbl, string iduser, string number)
         {
-            string SQLRequest = "DELETE FROM 'cards' WHERE id = " + idCard + " AND clientid = '" + iduser + "';";
+            string SQLRequest = "DELETE FROM 'cards' WHERE number = '" + number + "';";
             //string SQLRequest = "DELETE * FROM 'cards' WHERE id = ;";
             setConnectionDB(SQLRequest);
             showCards(iduser, lbl);

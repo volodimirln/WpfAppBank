@@ -1,0 +1,22 @@
+﻿<Window x:Class="BankApp.Windows.PaymentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankApp.Windows"
+        mc:Ignorable="d"
+        Title="PaymentWindow" Height="250" Width="400">
+    <Grid>
+        <StackPanel>
+            <Label>Наименование платежа</Label>
+            <TextBox x:Name="NamePay"></TextBox>
+            <Label>Контрагент</Label>
+            <TextBox x:Name="ContrPay"></TextBox>
+            <Label>Сумма</Label>
+            <TextBox x:Name="SumPay"></TextBox>
+            <Label>Карта</Label>
+            <ComboBox x:Name="DelCard"></ComboBox>
+            <Button Click="Button_Click">Отправить платеж</Button>
+        </StackPanel>
+    </Grid>
+</Window>

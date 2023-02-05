@@ -30,24 +30,57 @@ namespace WpfApp
            
             InitializeComponent();
             this.DataContext = this;
+           
+        }
+        private void dbv()
+        {
+            string databaseName = "mn.db";
+            SQLiteConnection connection =
+            new SQLiteConnection(string.Format("Data Source={0};", databaseName));
+            connection.Open();
+            SQLiteCommand command = new SQLiteCommand("SELECT * FROM 'cards';", connection);
+
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            string[] arcard = new string[100];
+            int i = 0;
+            foreach (DbDataRecord record in reader)
+            {
+                if (id == record["clientid"].ToString())
+                {
+                    for (int j = 0; j < arcard.Length; j++)
+                    {
+                        arcard[i] = record["number"].ToString();
+                    }
+                    i++;
+                }
+
+            }
+            // MainLbl.Content = tr;
+            var result = arcard.Where(x => x != null).ToArray();
+            ComboBox combo;
+            combo = new ComboBox();
+            result.ToList().ForEach(item => DelCard.Items.Add(item));
         }
        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WorkDB dB = new WorkDB();
             dB.addNewCard(id, CardsLBL);
+
         }
         private void BTNDelCardId_Click(object sender, RoutedEventArgs e)
         {
             WorkDB dB = new WorkDB();
-            dB.delCardByID(TBDelCardId.Text, CardsLBL, id);
-            //MessageBox.Show(TBDelCardId.Text);
+            dB.delCardByID(TBDelCardId.Text, CardsLBL, id, DelCard.SelectedValue.ToString());
+            
         }
         private void SPCards_Loaded(object sender, RoutedEventArgs e)
         {
             WorkDB dB = new WorkDB();
-
             dB.showCards(id, CardsLBL);
+            dbv();
+            
         }
     }
 }

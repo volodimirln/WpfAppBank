@@ -97,4 +97,71 @@
         <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Foreground" Value="#fff"/>
     </Style>
+    <Style TargetType="Button" x:Key="ButtonDashboard">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Margin" Value="15,12,15,0"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Label" x:Key="TitleLblDashBoard">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style TargetType="Label" x:Key="TitleBoxLblDashBoard">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="MainTBDashBoar">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="10,0,10,10"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#000"/>
+    </Style>
+    <Style TargetType="Label" x:Key="SubTitleLblDashBoard">
+        <Setter Property="Margin" Value="0,15,0,0"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style TargetType="Label" x:Key="TBoxDashboard">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Margin" Value="7,5,0,0"/>
+    </Style>
+    <Style TargetType="Label" x:Key="TBBoxDashboard">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Margin" Value="7,-7,0,0"/>
+    </Style>
+    <Style TargetType="Label" x:Key="LMTDashboard">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
+    <Style TargetType="Label" x:Key="LSTDashbord">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style TargetType="Label" x:Key="LTDashbord">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
 </ResourceDictionary>

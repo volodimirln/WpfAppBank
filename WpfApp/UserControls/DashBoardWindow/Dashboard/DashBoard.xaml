@@ -35,7 +35,7 @@
         </Border>
         <local:MainDashBoard x:Name="MainDashBoard" name="Нет данных" namecoomp="Нет данных" inn="Нет данных" ogrn="Нет данных" raschet="Нет данных"  Grid.Column="1"></local:MainDashBoard>
         <local:Cards x:Name="Cards" Grid.Column="1"></local:Cards>
-        <local:Statistics x:Name="Statistics"  Grid.Column="1"/>
+        <local:Statistics x:Name="Statistics"   Grid.Column="1"/>
         <local:Premium x:Name="Premium" Grid.Column="1"/>
     </Grid>
 </Window>

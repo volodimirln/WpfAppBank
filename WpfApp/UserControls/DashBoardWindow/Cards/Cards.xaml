@@ -26,7 +26,7 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Margin="25,0,25,0" >
-            <Label Content="Банковские карты" FontFamily="Montserrat" FontSize="26" FontWeight="Bold"/>
+            <Label x:Name="MainLbl" Content="Банковские карты" FontFamily="Montserrat" FontSize="26" FontWeight="Bold"/>
             <Label Content="Все Ваши карты в одной вкладке" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
             
         </StackPanel>
@@ -35,6 +35,7 @@
             <Button Click="Button_Click">Добавить карту</Button>
             <TextBox x:Name="TBDelCardId"/>
             <Button x:Name="BTNDelCardId" Click="BTNDelCardId_Click">Удалить карту</Button>
+            <ComboBox x:Name="DelCard" ></ComboBox>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -32,8 +32,9 @@
             <StackPanel Margin="0,25,0,0">
                 <Label Content="Исходящие платежи" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold"/>
                 <StackPanel>
-                  
-                    <Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,1,0,1"  BorderBrush="#000">
+                    <Label x:Name="IsPayLbl"/>
+
+                    <!--<Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,1,0,1"  BorderBrush="#000">
                         <DockPanel VerticalAlignment="Center">
                             <WrapPanel HorizontalAlignment="Left">
                                 <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="OOO 'КанцПлюс' - Бумага"/>
@@ -62,44 +63,25 @@
                                 <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="1000,00руб."/>
                             </WrapPanel>
                         </DockPanel>
-                    </Border>
+                    </Border>-->
                 </StackPanel>
-                
             </StackPanel>
             <StackPanel Margin="0,35,0,0">
                 <Label Content="Входящие платежи" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold"/>
                 <StackPanel>
-
-                    <Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,1,0,1"  BorderBrush="#000">
-                        <DockPanel VerticalAlignment="Center">
-                            <WrapPanel HorizontalAlignment="Left">
-                                <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="OOO 'КанцПлюс' - Бумага"/>
-                            </WrapPanel>
-                            <WrapPanel HorizontalAlignment="Right">
-                                <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="1000,00руб."/>
-                            </WrapPanel>
-                        </DockPanel>
-                    </Border>
-                    <Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,0,0,1"  BorderBrush="#000">
-                        <DockPanel VerticalAlignment="Center">
-                            <WrapPanel HorizontalAlignment="Left">
-                                <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Content="OOO 'КанцПлюс' - Бумага"/>
-                            </WrapPanel>
-                            <WrapPanel HorizontalAlignment="Right">
-                                <Label  FontFamily="Montserrat" FontWeight="Bold" FontSize="14"  Content="1000,00руб."/>
-                            </WrapPanel>
-                        </DockPanel>
-                    </Border>
+                    <Label x:Name="IncPayLbl"/>
+                    
+                    
                 </StackPanel>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column="1" Margin="25,90,25,0">
             <Label Content="Отчеты" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold" />
-            <StackPanel Margin="0,10,0,0">
+            <StackPanel Margin="0,10,0,0" Loaded="StackPanel_Loaded">
                 <Label Content="Траты за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
-                <Label Content="15 943,00 руб." FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
+                <Label Content="15 943,00 руб." x:Name="BlnLbl" FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
                 <Label Content="Выручка за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
-                <Label Content="18 754,00 руб." FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
+                <Label Content="18 754,00 руб." x:Name="Plbl" FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
                 <Button Click="NewPdf"  Height="20" FontSize="12" FontFamily="Montserrat" Margin="0,20,10,10">Создать отчет</Button>
             </StackPanel>
         </StackPanel>
