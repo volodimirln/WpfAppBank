@@ -32,7 +32,7 @@
             <StackPanel Margin="0,25,0,0">
                 <Label Content="Исходящие платежи" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold"/>
                 <StackPanel>
-                    <Label x:Name="IsPayLbl"/>
+                    <Label x:Name="IsPayLbl"  FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"/>
 
                     <!--<Border   Height="50"  VerticalAlignment="Top" Background="#0000" BorderThickness="0,1,0,1"  BorderBrush="#000">
                         <DockPanel VerticalAlignment="Center">
@@ -69,7 +69,7 @@
             <StackPanel Margin="0,35,0,0">
                 <Label Content="Входящие платежи" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold"/>
                 <StackPanel>
-                    <Label x:Name="IncPayLbl"/>
+                    <Label x:Name="IncPayLbl" FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"/>
                     
                     
                 </StackPanel>
@@ -80,7 +80,7 @@
             <StackPanel Margin="0,10,0,0" Loaded="StackPanel_Loaded">
                 <Label Content="Траты за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
                 <Label Content="15 943,00 руб." x:Name="BlnLbl" FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
-                <Label Content="Выручка за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
+                <Label Content="Приход за месяц" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
                 <Label Content="18 754,00 руб." x:Name="Plbl" FontFamily="Montserrat" FontSize="16" FontWeight="Bold"/>
                 <Button Click="NewPdf"  Height="20" FontSize="12" FontFamily="Montserrat" Margin="0,20,10,10">Создать отчет</Button>
             </StackPanel>

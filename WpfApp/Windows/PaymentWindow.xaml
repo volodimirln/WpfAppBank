@@ -5,18 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankApp.Windows"
         mc:Ignorable="d"
-        Title="PaymentWindow" Height="250" Width="400">
+        Title="Платеж"  MaxHeight="480" MaxWidth="590" MinHeight="480" MinWidth="590">
+    <Window.Resources>
+        <ResourceDictionary Source="/Style/MainStyle.xaml" />
+    </Window.Resources>
     <Grid>
-        <StackPanel>
-            <Label>Наименование платежа</Label>
-            <TextBox x:Name="NamePay"></TextBox>
-            <Label>Контрагент</Label>
-            <TextBox x:Name="ContrPay"></TextBox>
-            <Label>Сумма</Label>
-            <TextBox x:Name="SumPay"></TextBox>
-            <Label>Карта</Label>
-            <ComboBox x:Name="DelCard"></ComboBox>
-            <Button Click="Button_Click">Отправить платеж</Button>
+        <StackPanel Margin="10,10,10,10">
+            <Label Content="Выполнение платежа" Style="{StaticResource MainTitleLoginStyle}" Margin="0,0,0,15"/>
+            <Label Style="{StaticResource LMTDashboard}">Наименование платежа</Label>
+            <TextBox x:Name="NamePay" Style="{StaticResource TBLoginStyle}"></TextBox>
+            <Label Style="{StaticResource LMTDashboard}">Контрагент</Label>
+            <TextBox x:Name="ContrPay" Style="{StaticResource TBLoginStyle}"></TextBox>
+            <Label Style="{StaticResource LMTDashboard}">Сумма</Label>
+            <TextBox x:Name="SumPay" Style="{StaticResource TBLoginStyle}"></TextBox>
+            <Label Style="{StaticResource LMTDashboard}">Карта</Label>
+            <ComboBox x:Name="DelCard" FontFamily="Monserat"></ComboBox>
+            <Button Click="Button_Click" Style="{StaticResource BTLoginStyle}" Margin="0,20,0,0">Отправить платеж</Button>
         </StackPanel>
     </Grid>
 </Window>

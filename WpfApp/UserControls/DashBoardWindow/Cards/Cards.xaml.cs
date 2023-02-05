@@ -72,7 +72,7 @@ namespace WpfApp
         private void BTNDelCardId_Click(object sender, RoutedEventArgs e)
         {
             WorkDB dB = new WorkDB();
-            dB.delCardByID(TBDelCardId.Text, CardsLBL, id, DelCard.SelectedValue.ToString());
+            dB.delCardByID("", CardsLBL, id, DelCard.SelectedValue.ToString());
             
         }
         private void SPCards_Loaded(object sender, RoutedEventArgs e)

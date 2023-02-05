@@ -44,11 +44,6 @@
 
    
   <ItemGroup>
-    <Folder Include="UserControls\DashBoardWindow\Settings\" />
-  </ItemGroup>
-
-   
-  <ItemGroup>
     <None Update="Fonts\Montserrat-Black.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

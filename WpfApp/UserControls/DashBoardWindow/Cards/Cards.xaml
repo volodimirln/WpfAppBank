@@ -5,8 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <UserControl.Resources>
         <Style TargetType="Button">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontWeight" Value="Medium"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -30,12 +35,12 @@
             <Label Content="Все Ваши карты в одной вкладке" FontFamily="Montserrat" FontSize="16" FontWeight="Medium"/>
             
         </StackPanel>
-        <StackPanel Grid.Row="1" x:Name="SPCards" Loaded="SPCards_Loaded">
+        <StackPanel Grid.Row="1" x:Name="SPCards" Loaded="SPCards_Loaded"  Margin="25,0,25,0">
             <Label FontFamily="Montserrat" FontSize="14"  FontWeight="Medium"  Name="CardsLBL"/>
             <Button Click="Button_Click">Добавить карту</Button>
-            <TextBox x:Name="TBDelCardId"/>
-            <Button x:Name="BTNDelCardId" Click="BTNDelCardId_Click">Удалить карту</Button>
-            <ComboBox x:Name="DelCard" ></ComboBox>
+            <Label FontFamily="Montserrat" FontSize="24" FontWeight="Medium" Margin="0,25,0,0">Удалить карту</Label>
+            <ComboBox x:Name="DelCard" Margin="0,15,0,0"></ComboBox>
+            <Button x:Name="BTNDelCardId" Click="BTNDelCardId_Click" Margin="0,15,0,0">Удалить карту</Button>
         </StackPanel>
     </Grid>
 </UserControl>

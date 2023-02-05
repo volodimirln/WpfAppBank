@@ -35,8 +35,10 @@ namespace WpfApp
             Cards.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             Premium.Visibility = Visibility.Hidden;
+            Setting.Visibility = Visibility.Hidden;
 
-           
+
+
 
         }
         
@@ -46,6 +48,8 @@ namespace WpfApp
             Cards.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             Premium.Visibility = Visibility.Hidden;
+            Setting.Visibility = Visibility.Hidden;
+            Setting.Visibility = Visibility.Hidden;
         }
 
         private void openCards(object sender, RoutedEventArgs e)
@@ -54,7 +58,8 @@ namespace WpfApp
             Cards.Visibility = Visibility.Visible;
             Statistics.Visibility = Visibility.Hidden;
             Premium.Visibility = Visibility.Hidden;
-            
+            Setting.Visibility = Visibility.Hidden;
+
         }
 
         private void openStatistics(object sender, RoutedEventArgs e)
@@ -63,6 +68,7 @@ namespace WpfApp
             Cards.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Visible;
             Premium.Visibility = Visibility.Hidden;
+            Setting.Visibility = Visibility.Hidden;
         }
         private void openPrimium(object sender, RoutedEventArgs e)
         {
@@ -70,6 +76,7 @@ namespace WpfApp
             Cards.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             Premium.Visibility = Visibility.Visible;
+            Setting.Visibility = Visibility.Hidden;
         }
 
         private void openMain(object sender, RoutedEventArgs e)
@@ -78,6 +85,16 @@ namespace WpfApp
             Cards.Visibility = Visibility.Hidden;
             Statistics.Visibility = Visibility.Hidden;
             Premium.Visibility = Visibility.Hidden;
+            Setting.Visibility = Visibility.Hidden;
+        }
+
+        private void openSettings(object sender, RoutedEventArgs e)
+        {
+            MainDashBoard.Visibility = Visibility.Hidden;
+            Cards.Visibility = Visibility.Hidden;
+            Statistics.Visibility = Visibility.Hidden;
+            Premium.Visibility = Visibility.Hidden;
+            Setting.Visibility = Visibility.Visible;
         }
     }
 }

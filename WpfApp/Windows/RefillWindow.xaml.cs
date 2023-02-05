@@ -70,7 +70,7 @@ namespace BankApp.Windows
                     sum -= int.Parse(record["sum"].ToString());
                 }
             }
-            BalanceLbl.Content = "Баланс" + sum.ToString();
+            BalanceLbl.Content = "Баланс " + sum.ToString()+ "₽";
         }
     }
 }

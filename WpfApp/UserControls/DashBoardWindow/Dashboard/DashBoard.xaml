@@ -22,7 +22,7 @@
                     <Button Style="{StaticResource ButDachBoardWindow}" Click="openCards">Карты</Button>
                     <Button Style="{StaticResource ButDachBoardWindow}" Click="openStatistics">Статиcтика</Button>
                     <Button Style="{StaticResource ButDachBoardWindow}" Click="openPrimium">Премиум</Button>
-                    <Button Style="{StaticResource ButDachBoardWindow}">Настройки</Button>
+                    <Button Style="{StaticResource ButDachBoardWindow}" Click="openSettings">Настройки</Button>
                 </StackPanel>
                 
                 <Border  CornerRadius="15,15,15,15" Background="#000" Margin="10,10,10,10">
@@ -37,5 +37,7 @@
         <local:Cards x:Name="Cards" Grid.Column="1"></local:Cards>
         <local:Statistics x:Name="Statistics"   Grid.Column="1"/>
         <local:Premium x:Name="Premium" Grid.Column="1"/>
+        <local:SettingsDb x:Name="Setting" Grid.Column="1"/>
+
     </Grid>
 </Window>
